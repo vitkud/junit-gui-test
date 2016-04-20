@@ -1,0 +1,27 @@
+group = 'ru.vitkud.test'
+version = '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+sourceSets {
+	main {
+		[java,resources]*.srcDirs = ['src']
+	}
+	test {
+		[java,resources]*.srcDirs = ['test']
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url "https://jitpack.io" }
+}
+
+dependencies {
+	compile 'com.github.vitkud:junit3-swingui:1.0'
+	testCompile 'junit:junit:4.12'
+}
